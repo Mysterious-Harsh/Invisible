@@ -68,7 +68,13 @@ class Homepage:
 		self.bufferSize = 64 * 1024
 
 	def random_str( self, n ):
-		return ( ''.join( random.choices( string.ascii_uppercase + string.digits + string.ascii_lowercase, k=n ) ) )
+		return (
+		    ''.join(
+		        random.choices(
+		            string.ascii_uppercase + string.digits + string.ascii_lowercase, k=n
+		            )
+		        )
+		    )
 
 	def hide( self ):
 		self.src_dir = filedialog.askdirectory( title="Select Folder" )
@@ -76,7 +82,9 @@ class Homepage:
 			self.mainframe.config( text="Hidding..." )
 			self.mainframe.update()
 			self.src_dir = os.path.abspath( self.src_dir )
-			Enc = Encryptor( self.src_dir, self.dest_dir, self.dirlists, self.filelists, self.password )
+			Enc = Encryptor(
+			    self.src_dir, self.dest_dir, self.dirlists, self.filelists, self.password
+			    )
 			Enc.encrypt()
 			self.mainframe.config( text=self.user )
 			self.mainframe.update()
@@ -89,7 +97,8 @@ class Homepage:
 		# home = os.path.abspath( os.path.join( os.path.expanduser( '~' ), "AppData\\Local\\Programs\\Invisible" ) )
 		home = "Invisible"
 		sd = Showdirs(
-		    self.root, self.mainframe, home, self.user, self.password, self.dirname, self.dirlists, self.filelists
+		    self.root, self.mainframe, home, self.user, self.password, self.dirname, self.dirlists,
+		    self.filelists
 		    )
 
 	def back_up( self ):
@@ -103,7 +112,8 @@ class Homepage:
 			self.mainframe.update()
 			#print( src_dir, dest_dir )
 			Enc = Encryptor(
-			    src_dir, os.path.join( dest_dir, self.dirname ), self.dirlists, self.filelists, self.password
+			    src_dir, os.path.join( dest_dir, self.dirname ), self.dirlists, self.filelists,
+			    self.password
 			    )
 			Enc.encrypt()
 			self.mainframe.config( text=self.user )
@@ -119,7 +129,8 @@ class Homepage:
 			messagebox.showerror( "Error", "No restore point found !" )
 		else:
 			sd = Showdirs(
-			    self.root, self.mainframe, home, self.user, self.password, self.dirname, self.dirlists, self.filelists
+			    self.root, self.mainframe, home, self.user, self.password, self.dirname,
+			    self.dirlists, self.filelists
 			    )
 
 	# def change_pass( self ):
