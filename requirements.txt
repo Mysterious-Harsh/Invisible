@@ -1,0 +1,7 @@
+tk
+pyAesCrypt
+openpyxl
+tempfile
+shutil
+pywin32
+smtplib
