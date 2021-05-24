@@ -17,7 +17,7 @@ python Invisible.py
 - At initial start of software, it ask for registration key which is generate by keygen.exe or keygen.py module by entering text which you received by mail.
 
 ## Snapshots
-- Initial start
+- Initial Start
 ![Initial start](Snapshots/1.png)
 - Login
 ![login](Snapshots/2.png)
