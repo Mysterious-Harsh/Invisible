@@ -4,6 +4,8 @@
 - Hide/Unhide multiple directory into system 
 - Backup/Restore folder in any removable media
 - Multiuser support by registering users ( Can't change password or delete user for now )
+- After first run software also hide itself. 
+
 ## Installation 
 ```sh
 pip install -r requirements.txt
